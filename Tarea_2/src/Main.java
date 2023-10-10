@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(2,1000,2,500);
+        Expendedor exp = new Expendedor(5,1000,5,500);
         Moneda m = null;
         Comprador c=null;
 

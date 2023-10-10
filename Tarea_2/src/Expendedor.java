@@ -37,7 +37,7 @@ class Expendedor{
             if (m != null){
                 try {
                     if (m.getValor() >= precioBebidas) {
-                        int nb = (m.getValor() - precioBebidas) / 100;
+                        int VueltoBebida = (m.getValor() - precioBebidas) / 100;
                         Producto aux;
                         switch (cual) {
                             case COCA:
@@ -47,29 +47,30 @@ class Expendedor{
                                         monVu.addMoneda(m);
                                         throw new NoHayProductoException("No hay CocaCola");
                                     } else {
-                                        for (int i = 0; i < nb; i++) {
+                                        for (int i = 0; i < VueltoBebida; i++) {
                                             monVu.addMoneda(new Moneda100());
                                         }
                                         return aux;
                                     }
                                 } catch (Exception e){
                                     System.out.println(e.getMessage());
+                                    return null;
                                 }
                             case SPRITE:
                                 try {
-
                                     aux = sprite.getProducto();
                                     if (aux == null) {
                                         monVu.addMoneda(m);
                                         throw new NoHayProductoException("No hay Sprite");
                                     } else {
-                                        for (int i = 0; i < nb; i++) {
+                                        for (int i = 0; i < VueltoBebida; i++) {
                                             monVu.addMoneda(new Moneda100());
                                         }
                                         return aux;
                                     }
                                 } catch (Exception e){
                                     System.out.println(e.getMessage());
+                                    return null;
                                 }
                             case FANTA:
                                 aux = fanta.getProducto();
@@ -78,14 +79,27 @@ class Expendedor{
                                         monVu.addMoneda(m);
                                         throw new NoHayProductoException("No hay Fanta");
                                     } else {
-                                        for (int i = 0; i < nb; i++) {
+                                        for (int i = 0; i < VueltoBebida; i++) {
                                             monVu.addMoneda(new Moneda100());
                                         }
                                         return aux;
                                     }
-                                } catch (Exception e){
+                                } catch (Exception e) {
                                     System.out.println(e.getMessage());
+                                    return null;
                                 }
+                            case SNIKERS:
+                                break;
+                            case SUPER8:
+                                break;
+                            default:
+                                monVu.addMoneda(m);
+                                throw new NoHayProductoException("No hay un producto con ese número correspondiente");
+                        }
+                    } else if (m.getValor() >= precioDulces){
+                        int VueltoDulce = (m.getValor() - precioDulces) / 100;
+                        Producto aux;
+                        switch (cual){
                             case SNIKERS:
                                 aux = snickers.getProducto();
                                 try {
@@ -93,13 +107,14 @@ class Expendedor{
                                         monVu.addMoneda(m);
                                         throw new NoHayProductoException("No hay Snikers");
                                     } else {
-                                        for (int i = 0; i < nb; i++) {
+                                        for (int i = 0; i < VueltoDulce; i++) {
                                             monVu.addMoneda(new Moneda100());
                                         }
                                         return aux;
                                     }
                                 } catch (Exception e){
                                     System.out.println(e.getMessage());
+                                    return null;
                                 }
                             case SUPER8:
                                 aux = super8.getProducto();
@@ -108,19 +123,21 @@ class Expendedor{
                                         monVu.addMoneda(m);
                                         throw new NoHayProductoException("No hay Super8");
                                     } else {
-                                        for (int i = 0; i < nb; i++) {
+                                        for (int i = 0; i < VueltoDulce; i++) {
                                             monVu.addMoneda(new Moneda100());
                                         }
                                         return aux;
                                     }
                                 } catch (Exception e){
                                     System.out.println(e.getMessage());
+                                    return null;
                                 }
                             default:
                                 monVu.addMoneda(m);
                                 throw new NoHayProductoException("No hay un producto con ese número correspondiente");
                         }
-                    } else {
+
+                    }else {
                         monVu.addMoneda(m);
                         throw new PagoInsuficienteException("El saldo es menor al precio del producto");
                     }
@@ -135,6 +152,7 @@ class Expendedor{
             System.out.println(e.getMessage());
             return null;
         }
+        return null;
 
     }
     public Moneda getVuelto(){
