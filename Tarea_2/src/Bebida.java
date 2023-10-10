@@ -1,4 +1,4 @@
-abstract class Bebida{
+abstract class Bebida extends Producto{
     private int serie;
     public Bebida(int serie){
         this.serie = serie;
@@ -6,5 +6,5 @@ abstract class Bebida{
     public int getSerie(){
         return this.serie;
     }
-    public abstract String beber();
+    public abstract String comer();
 }

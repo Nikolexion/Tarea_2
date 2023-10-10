@@ -3,7 +3,7 @@ class Sprite extends Bebida{
         super(serie);
     }
     @Override
-    public String beber(){
+    public String comer(){
         return "sprite";
     }
 }

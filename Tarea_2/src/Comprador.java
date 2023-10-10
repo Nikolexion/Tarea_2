@@ -2,12 +2,12 @@ class Comprador{
     private String sonido;
     private int vuelto;
     public Comprador(Moneda m, int cualBebida, Expendedor exp){
-        Bebida b = exp.comprarBebida(m, cualBebida);
+        Producto b = exp.comprarProducto(m, cualBebida);
         if (m != null){
             if (b == null){
                 sonido = null;
             } else {
-                sonido = b.beber();
+                sonido = b.comer();
 
             }
             Moneda aux;

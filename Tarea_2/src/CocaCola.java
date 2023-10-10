@@ -3,7 +3,7 @@ class CocaCola extends Bebida{
         super(serie);
     }
     @Override
-    public String beber(){
+    public String comer(){
         return  "cocacola";
     }
 }
