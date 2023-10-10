@@ -10,6 +10,8 @@ class Expendedor{
     public static final int  COCA = 1;
     public static final int  SPRITE = 2;
     public static final int  FANTA = 3;
+    public static final int  SNIKERS = 4;
+    public static final int  SUPER8 = 5;
     public Expendedor(int numBebida, int precioBebidas, int numDulces, int precioDulces){
         this.precioBebidas = precioBebidas;
         this.precioDulces = precioDulces;
@@ -31,54 +33,106 @@ class Expendedor{
         }
     }
     public Producto comprarProducto(Moneda m, int cual){
+        try {
+            if (m != null){
+                try {
+                    if (m.getValor() >= precioBebidas) {
+                        int nb = (m.getValor() - precioBebidas) / 100;
+                        Producto aux;
+                        switch (cual) {
+                            case COCA:
+                                aux = coca.getProducto();
+                                try {
+                                    if (aux == null) {
+                                        monVu.addMoneda(m);
+                                        throw new NoHayProductoException("No hay CocaCola");
+                                    } else {
+                                        for (int i = 0; i < nb; i++) {
+                                            monVu.addMoneda(new Moneda100());
+                                        }
+                                        return aux;
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
+                            case SPRITE:
+                                try {
 
-        if (m != null){
-            if (m.getValor() >= precioBebidas) {
-                int nb = (m.getValor() - precioBebidas) / 100;
-                Producto aux;
-                switch (cual) {
-                    case COCA:
-                        aux = coca.getProducto();
-                        if (aux == null) {
-                            monVu.addMoneda(m);
-                            return null;
-                        } else {
-                            for (int i = 0; i < nb; i++) {
-                                monVu.addMoneda(new Moneda100());
-                            }
-                            return aux;
+                                    aux = sprite.getProducto();
+                                    if (aux == null) {
+                                        monVu.addMoneda(m);
+                                        throw new NoHayProductoException("No hay Sprite");
+                                    } else {
+                                        for (int i = 0; i < nb; i++) {
+                                            monVu.addMoneda(new Moneda100());
+                                        }
+                                        return aux;
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
+                            case FANTA:
+                                aux = fanta.getProducto();
+                                try {
+                                    if (aux == null) {
+                                        monVu.addMoneda(m);
+                                        throw new NoHayProductoException("No hay Fanta");
+                                    } else {
+                                        for (int i = 0; i < nb; i++) {
+                                            monVu.addMoneda(new Moneda100());
+                                        }
+                                        return aux;
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
+                            case SNIKERS:
+                                aux = snickers.getProducto();
+                                try {
+                                    if (aux == null) {
+                                        monVu.addMoneda(m);
+                                        throw new NoHayProductoException("No hay Snikers");
+                                    } else {
+                                        for (int i = 0; i < nb; i++) {
+                                            monVu.addMoneda(new Moneda100());
+                                        }
+                                        return aux;
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
+                            case SUPER8:
+                                aux = super8.getProducto();
+                                try {
+                                    if (aux == null) {
+                                        monVu.addMoneda(m);
+                                        throw new NoHayProductoException("No hay Super8");
+                                    } else {
+                                        for (int i = 0; i < nb; i++) {
+                                            monVu.addMoneda(new Moneda100());
+                                        }
+                                        return aux;
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.getMessage());
+                                }
+                            default:
+                                monVu.addMoneda(m);
+                                throw new NoHayProductoException("No hay un producto con ese número correspondiente");
                         }
-                    case SPRITE:
-                        aux = sprite.getProducto();
-                        if (aux == null) {
-                            monVu.addMoneda(m);
-                            return null;
-                        } else {
-                            for (int i = 0; i < nb; i++) {
-                                monVu.addMoneda(new Moneda100());
-                            }
-                            return aux;
-                        }
-                    case FANTA:
-                        aux = fanta.getProducto();
-                        if (aux == null) {
-                            monVu.addMoneda(m);
-                            return null;
-                        } else {
-                            for (int i = 0; i < nb; i++) {
-                                monVu.addMoneda(new Moneda100());
-                            }
-                            return aux;
-                        }
-                    default:
+                    } else {
                         monVu.addMoneda(m);
-                        return null;
+                        throw new PagoInsuficienteException("El saldo es menor al precio del producto");
+                    }
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+                    return null;
                 }
             } else {
-                monVu.addMoneda(m);
-                return null;
+                throw new PagoIncorrectoException("Se ha pagado con una moneda invalida");
             }
-        } else {
+        } catch (Exception e){
+            System.out.println(e.getMessage());
             return null;
         }
 
