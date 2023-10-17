@@ -96,7 +96,8 @@ class Expendedor{
                                 monVu.addMoneda(m);
                                 throw new NoHayProductoException("No hay un producto con ese número correspondiente");
                         }
-                    } else if (m.getValor() >= precioDulces){
+
+                    } if (m.getValor() >= precioDulces){
                         int VueltoDulce = (m.getValor() - precioDulces) / 100;
                         Producto aux;
                         switch (cual){
@@ -137,7 +138,7 @@ class Expendedor{
                                 throw new NoHayProductoException("No hay un producto con ese número correspondiente");
                         }
 
-                    }else {
+                    } else {
                         monVu.addMoneda(m);
                         throw new PagoInsuficienteException("El saldo es menor al precio del producto");
                     }
@@ -152,7 +153,7 @@ class Expendedor{
             System.out.println(e.getMessage());
             return null;
         }
-        return null;
+
 
     }
     public Moneda getVuelto(){

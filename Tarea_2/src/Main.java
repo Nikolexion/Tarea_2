@@ -8,35 +8,35 @@ public class Main {
         System.out.println("---------Producto que NO vende---------");
         m = new Moneda1000();
         c = new Comprador(m,664,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
-        c = new Comprador(m,664,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,104,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
-        c = new Comprador(m,664,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,554,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
-        c = new Comprador(m,664,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,662,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
-        c = new Comprador(m,664,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,0,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
 
         //-----trata de comprar SIN Moneda-----
         System.out.println("---------trata de comprar SIN Moneda---------");
         m = null;
         c = new Comprador(m,Expendedor.SPRITE,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
-        m = null;
+
         c = new Comprador(m,Expendedor.COCA,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
-        m = null;
+
         c = new Comprador(m,Expendedor.FANTA,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
-        m = null;
+
         c = new Comprador(m,Expendedor.SNIKERS,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
-        m = null;
+
         c = new Comprador(m,Expendedor.SUPER8,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
 
@@ -47,16 +47,16 @@ public class Main {
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
         m = new Moneda1000();
         c = new Comprador(m,Expendedor.SPRITE,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $0
         m = new Moneda1000();
         c = new Comprador(m,Expendedor.FANTA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// fanta $0
         m = new Moneda500();
         c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// snikers $0
         m = new Moneda500();
         c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// super8 $0
 
         //-----con MENOS dinero que el precio-----
         System.out.println("---------con MENOS dinero que el precio---------");
@@ -71,45 +71,48 @@ public class Main {
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
         m = new Moneda100();
         c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $100
         m = new Moneda100();
         c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $100
 
-        // -----con MAS dinero que el precio-----
+        //----------------------------------------con MAS dinero que el precio------------------------------------------
+
         System.out.println("---------con MAS dinero que el precio---------");
         m = new Moneda1500();
         c = new Comprador(m,Expendedor.COCA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $500
         m = new Moneda1500();
         c = new Comprador(m,Expendedor.SPRITE,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
         m = new Moneda1500();
         c = new Comprador(m,Expendedor.FANTA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// fanta $500
         m = new Moneda1500();
         c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// snikers 1000
         m = new Moneda1500();
         c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// super8 1000
 
-        //-----Deposito VACIO-----
+        //-------------------------------------------Deposito VACIO-----------------------------------------------------
+
         System.out.println("---------Deposito VACIO---------");
+        Expendedor exp1 = new Expendedor(0,1000,0,500);
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.COCA,exp);
+        c = new Comprador(m,Expendedor.COCA,exp1);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Expendedor.SPRITE,exp1);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.FANTA,exp);
+        c = new Comprador(m,Expendedor.FANTA,exp1);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SNIKERS,exp);
+        c = new Comprador(m,Expendedor.SNIKERS,exp1);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SUPER8,exp);
+        c = new Comprador(m,Expendedor.SUPER8,exp1);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
 
     }
