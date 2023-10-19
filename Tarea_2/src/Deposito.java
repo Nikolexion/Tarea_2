@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 
-class Deposito {
-    private ArrayList<Producto> al;
+class Deposito <T> {
+    private ArrayList<T>  al;
 
     public Deposito() {
         al = new ArrayList();
     }
 
-    public void addProducto(Producto producto) {
-        al.add(producto);
+    public void addElemento(T elemento) {
+        al.add(elemento);
     }
 
-    public Producto getProducto() {
+    public T getElemento() {
         if (al.size() == 0) {
             return null;
         } else {

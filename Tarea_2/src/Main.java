@@ -120,6 +120,7 @@ public class Main {
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
 
         //-------------------------------------------Prueba de Moneda---------------------------------------------------
+
         System.out.println("---------Prueba de Moneda compareTo---------");
         Moneda m1 = new Moneda100();
         Moneda m2 = new Moneda500();
