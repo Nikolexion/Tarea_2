@@ -8,7 +8,13 @@ abstract class Moneda implements Comparable<Moneda> {
     }
 
     public abstract int getValor();
-    public abstract String toString();
+    @Override
+    public String toString() {
+        return "{" +
+                " serie (puntero) = " + super.toString() + "; " +
+                "valor = " + this.getValor() +
+                '}';
+    }
 
     @Override
     public int compareTo(Moneda moneda) {
