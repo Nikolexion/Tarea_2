@@ -8,4 +8,11 @@ class Moneda1500 extends Moneda{
         return 1500;
     }
 
+    @Override
+    public String toString() {
+        return "Moneda1500 {" +
+                "serie = " + serie  + "; " +
+                "valor = " + this.getValor() +
+                '}';
+    }
 }

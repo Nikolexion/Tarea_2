@@ -6,4 +6,12 @@ class Moneda500 extends Moneda{
     public int getValor() {
         return 500;
     }
+
+    @Override
+    public String toString() {
+        return "Moneda500 {" +
+                "serie = " + serie  + "; " +
+                "valor = " + this.getValor() +
+                '}';
+    }
 }
