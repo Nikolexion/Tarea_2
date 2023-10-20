@@ -6,27 +6,12 @@ public class Main {
         Expendedor exp = new Expendedor(6);
         Moneda m = null;
         Comprador c=null;
-
-        //------------------------------------------Producto que NO vende-----------------------------------------------
-
-        /*
-        System.out.println("---------Producto que NO vende---------");
-        m = new Moneda1000();
-        c = new Comprador(m,323,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
-        m = new Moneda1000();
-        c = new Comprador(m,104,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
-        m = new Moneda1000();
-        c = new Comprador(m,554,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
-        m = new Moneda1000();
-        c = new Comprador(m,662,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
-        m = new Moneda1000();
-        c = new Comprador(m,6,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
-         */
+        try {
+            c = new Comprador(m,PrecioProducto.COCA,exp);
+            System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
+        } catch (PagoIncorrectoException exception) {
+            System.out.println("La moneda es invalida");
+        }
 
         //----------------------------------------trata de comprar SIN Moneda-------------------------------------------
         /*
