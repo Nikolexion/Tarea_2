@@ -92,10 +92,7 @@ class CompradorTest {
 
     //----------------------------------------Compras con dinero insuficiente-------------------------------------------
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoInsuficienteException, luego dado tener dinero insuficiente,
-     * no retorne CocaCola y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoInsuficienteException */
     @Test
     public void testCompraCocaDineroInsuficiente(){
         assertThrows(PagoInsuficienteException.class, () -> {
@@ -105,10 +102,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoInsuficienteException, luego dado tener dinero insuficiente,
-     * no retorne Sprite y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoInsuficienteException */
     @Test
     public void testCompraSpriteDineroInsuficiente(){
         assertThrows(PagoInsuficienteException.class, () -> {
@@ -118,10 +112,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoInsuficienteException, luego dado tener dinero insuficiente,
-     * no retorne Fanta y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoInsuficienteException */
     @Test
     public void testCompraFantaDineroInsuficiente(){
         assertThrows(PagoInsuficienteException.class, () -> {
@@ -131,10 +122,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoInsuficienteException, luego dado tener dinero insuficiente,
-     * no retorne Snickers y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoInsuficienteException */
     @Test
     public void testCompraSnickersDineroInsuficiente(){
         assertThrows(PagoInsuficienteException.class, () -> {
@@ -144,10 +132,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoInsuficienteException, luego dado tener dinero insuficiente,
-     * no retorne Super8 y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoInsuficienteException */
     @Test
     public void testCompraSuper8DineroInsuficiente(){
     assertThrows(PagoInsuficienteException.class, () -> {
@@ -159,10 +144,7 @@ class CompradorTest {
 
     //------------------------------------------Compras con moneda inválida---------------------------------------------
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoIncorrectoException, luego dado pagar con una moneda
-     * inválida, no retorne CocaCola y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoIncorrectoException */
     @Test
     public void testCompraCocaMonedaInvalida(){
         assertThrows(PagoIncorrectoException.class, () -> {
@@ -172,10 +154,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoIncorrectoException, luego dado pagar con una moneda
-     * inválida, no retorne Sprite y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoIncorrectoException */
     @Test
     public void testCompraSpriteMonedaInvalida(){
         assertThrows(PagoIncorrectoException.class, () -> {
@@ -185,10 +164,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoIncorrectoException, luego dado pagar con una moneda
-     * inválida, no retorne Fanta y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoIncorrectoException */
     @Test
     public void testCompraFantaMonedaInvalida(){
         assertThrows(PagoIncorrectoException.class, () -> {
@@ -198,10 +174,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoIncorrectoException, luego dado pagar con una moneda
-     * inválida, no retorne Snickers y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoIncorrectoException */
     @Test
     public void testCompraSnickersMonedaInvalida(){
         assertThrows(PagoIncorrectoException.class, () -> {
@@ -211,10 +184,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente PagoIncorrectoException, luego dado pagar con una moneda
-     * inválida, no retorne Super8 y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente PagoIncorrectoException */
     @Test
     public void testCompraSuper8MonedaInvalida(){
         assertThrows(PagoIncorrectoException.class, () -> {
@@ -226,10 +196,7 @@ class CompradorTest {
 
     //------------------------------------------Compras con depósito vacío----------------------------------------------
 
-    /**
-     * Test para evaluar primero si se da correctamente NoHayProductoException, luego dado pagar con una moneda
-     * válida, no retorne CocaCola y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente NoHayProductoException */
     @Test
     public void testCompraCocaConDepositoVacio(){
         assertThrows(NoHayProductoException.class, () -> {
@@ -239,10 +206,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente NoHayProductoException, luego dado pagar con una moneda
-     * válida, no retorne Sprite y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente NoHayProductoException */
     @Test
     public void testCompraSpriteConDepositoVacio(){
         assertThrows(NoHayProductoException.class, () -> {
@@ -252,10 +216,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente NoHayProductoException, luego dado pagar con una moneda
-     * válida, no retorne Fanta y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente NoHayProductoException */
     @Test
     public void testCompraFantaConDepositoVacio(){
         assertThrows(NoHayProductoException.class, () -> {
@@ -265,10 +226,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente NoHayProductoException, luego dado pagar con una moneda
-     * válida, no retorne Snickers y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente NoHayProductoException */
     @Test
     public void testCompraSnickersConDepositoVacio(){
         assertThrows(NoHayProductoException.class, () -> {
@@ -278,10 +236,7 @@ class CompradorTest {
         });
     }
 
-    /**
-     * Test para evaluar primero si se da correctamente NoHayProductoException, luego dado pagar con una moneda
-     * válida, no retorne Super8 y devuelva la moneda
-     */
+    /** Test para evaluar si se da correctamente NoHayProductoException */
     @Test
     public void testCompraSuper8ConDepositoVacio(){
         assertThrows(NoHayProductoException.class, () -> {
