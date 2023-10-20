@@ -102,8 +102,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(6);
             Moneda m = new Moneda100();
             Comprador comprador = new Comprador(m, PrecioProducto.COCA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -117,8 +115,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(6);
             Moneda m = new Moneda100();
             Comprador comprador = new Comprador(m, PrecioProducto.SPRITE, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -132,8 +128,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(6);
             Moneda m = new Moneda100();
             Comprador comprador = new Comprador(m, PrecioProducto.FANTA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -147,8 +141,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(6);
             Moneda m = new Moneda100();
             Comprador comprador = new Comprador(m, PrecioProducto.SNICKERS, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -162,8 +154,6 @@ class CompradorTest {
         Expendedor exp = new Expendedor(6);
         Moneda m = new Moneda100();
         Comprador comprador = new Comprador(m, PrecioProducto.SUPER8, exp);
-        assertEquals(null,comprador.queBebiste());
-        assertEquals(1000,comprador.cuantoVuelto());
     });
 }
 
@@ -179,8 +169,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(4);
             Moneda m = null;
             Comprador comprador = new Comprador(m, PrecioProducto.COCA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -194,8 +182,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(4);
             Moneda m = new Moneda1500();
             Comprador comprador = new Comprador(m, PrecioProducto.SPRITE, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -209,8 +195,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(4);
             Moneda m = null;
             Comprador comprador = new Comprador(m, PrecioProducto.FANTA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -224,8 +208,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(4);
             Moneda m = new Moneda1500();
             Comprador comprador = new Comprador(m, PrecioProducto.SNICKERS, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -239,8 +221,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(4);
             Moneda m = null;
             Comprador comprador = new Comprador(m, PrecioProducto.SUPER8, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -256,8 +236,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(0);
             Moneda m = new Moneda1000();
             Comprador comprador = new Comprador(m, PrecioProducto.COCA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -271,8 +249,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(0);
             Moneda m = new Moneda1000();
             Comprador comprador = new Comprador(m, PrecioProducto.SPRITE, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -286,8 +262,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(0);
             Moneda m = new Moneda1000();
             Comprador comprador = new Comprador(m, PrecioProducto.FANTA, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -301,8 +275,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(0);
             Moneda m = new Moneda1000();
             Comprador comprador = new Comprador(m, PrecioProducto.SNICKERS, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 
@@ -316,8 +288,6 @@ class CompradorTest {
             Expendedor exp = new Expendedor(0);
             Moneda m = new Moneda1000();
             Comprador comprador = new Comprador(m, PrecioProducto.SUPER8, exp);
-            assertEquals(null,comprador.queBebiste());
-            assertEquals(1000,comprador.cuantoVuelto());
         });
     }
 }
