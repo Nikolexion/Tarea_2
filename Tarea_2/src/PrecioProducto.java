@@ -8,11 +8,11 @@ public enum PrecioProducto {
     /** Inicializamos los precios constantes a elección para todos nuestros productos en el orden con el que deseamos
      * indexarlos próximamente
      */
-    COCA(1000),
-    SPRITE(900),
-    FANTA(800),
-    SNICKERS(700),
-    SUPER8(600);
+    COCA(900),
+    SPRITE(800),
+    FANTA(700),
+    SNICKERS(600),
+    SUPER8(500);
 
     /** Propiedad privada para almacenar el precio inicializado en el constructor */
     private int precio;
