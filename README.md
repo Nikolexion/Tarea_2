@@ -1,3 +1,3 @@
 # Tarea_2
-Integrantes:  -Sofía López Aguilera
-              -Nicolás López Cid
+Integrantes:  -Sofía López Aguilera (lulunkaii)
+              -Nicolás López Cid (Nikolexion)
