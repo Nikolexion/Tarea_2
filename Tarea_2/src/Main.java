@@ -1,14 +1,18 @@
+import java.util.function.Predicate;
+
 public class Main {
-    public static void main(String[] args) {
-        Expendedor exp = new Expendedor(5,1000,5,500);
+    public static void main(String[] args)
+        throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        Expendedor exp = new Expendedor(6);
         Moneda m = null;
         Comprador c=null;
 
         //------------------------------------------Producto que NO vende-----------------------------------------------
 
+        /*
         System.out.println("---------Producto que NO vende---------");
         m = new Moneda1000();
-        c = new Comprador(m,664,exp);
+        c = new Comprador(m,323,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
         c = new Comprador(m,104,exp);
@@ -20,104 +24,109 @@ public class Main {
         c = new Comprador(m,662,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
         m = new Moneda1000();
-        c = new Comprador(m,0,exp);
+        c = new Comprador(m,6,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1000
+         */
 
         //----------------------------------------trata de comprar SIN Moneda-------------------------------------------
-
+        /*
         System.out.println("---------trata de comprar SIN Moneda---------");
         m = null;
-        c = new Comprador(m,Expendedor.SPRITE,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
+        c = new Comprador(m,PrecioProducto.COCA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" PagoIncorrectoException
 
-        c = new Comprador(m,Expendedor.COCA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
+        c = new Comprador(m,PrecioProducto.SPRITE,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" PagoIncorrectoException
 
-        c = new Comprador(m,Expendedor.FANTA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
+        c = new Comprador(m,PrecioProducto.FANTA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" PagoIncorrectoException
 
-        c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
+        c = new Comprador(m,PrecioProducto.SNICKERS,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" PagoIncorrectoException
 
-        c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $0
+        c = new Comprador(m,PrecioProducto.SUPER8,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" PagoIncorrectoException
+
+        */
 
         //---------------------------------------con dinero JUSTO para el precio----------------------------------------
 
         System.out.println("---------con dinero JUSTO para el precio---------");
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.COCA,exp);
+        c = new Comprador(m,PrecioProducto.COCA,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,PrecioProducto.SPRITE,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $0
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.FANTA,exp);
+        c = new Comprador(m,PrecioProducto.FANTA,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// fanta $0
-        m = new Moneda500();
-        c = new Comprador(m,Expendedor.SNIKERS,exp);
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SNICKERS,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// snikers $0
-        m = new Moneda500();
-        c = new Comprador(m,Expendedor.SUPER8,exp);
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SUPER8,exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// super8 $0
 
         //----------------------------------------con MENOS dinero que el precio----------------------------------------
-
+        /*
         System.out.println("---------con MENOS dinero que el precio---------");
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.COCA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,PrecioProducto.COCA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// Exception in thread "main" PagoInsuficienteException
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,PrecioProducto.SPRITE,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// Exception in thread "main" PagoInsuficienteException
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.FANTA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $500
+        c = new Comprador(m,PrecioProducto.FANTA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// Exception in thread "main" PagoInsuficienteException
         m = new Moneda100();
-        c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $100
+        c = new Comprador(m,PrecioProducto.SNICKERS,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// Exception in thread "main" PagoInsuficienteException
         m = new Moneda100();
-        c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $100
+        c = new Comprador(m,PrecioProducto.SUPER8,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// Exception in thread "main" PagoInsuficienteException
+
+         */
 
         //----------------------------------------con MAS dinero que el precio------------------------------------------
 
         System.out.println("---------con MAS dinero que el precio---------");
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.COCA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.FANTA,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// fanta $500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SNIKERS,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// snikers 1000
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SUPER8,exp);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// super8 1000
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.COCA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// cocacola $0
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SPRITE,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// sprite $100
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.FANTA,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// fanta $200
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SNICKERS,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// snikers $300
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SUPER8,exp);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto());// super8 $400
 
         //-------------------------------------------Deposito VACIO-----------------------------------------------------
 
         System.out.println("---------Deposito VACIO---------");
-        Expendedor exp1 = new Expendedor(0,1000,0,500);
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.COCA,exp1);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp1);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.FANTA,exp1);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SNIKERS,exp1);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
-        m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SUPER8,exp1);
-        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // null $1500
+        Expendedor exp1 = new Expendedor(0);
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.COCA,exp1);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" NoHayProductoException
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SPRITE,exp1);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" NoHayProductoException
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.FANTA,exp1);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" NoHayProductoException
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SNICKERS,exp1);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" NoHayProductoException
+        m = new Moneda1000();
+        c = new Comprador(m,PrecioProducto.SUPER8,exp1);
+        System.out.println(c.queBebiste()+", "+c.cuantoVuelto()); // Exception in thread "main" NoHayProductoException
 
         //-------------------------------------------Prueba de Moneda---------------------------------------------------
 
