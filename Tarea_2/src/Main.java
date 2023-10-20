@@ -9,7 +9,7 @@ public class Main {
 
         //-------------------------------------con dinero SUFICIENTE para el precio-------------------------------------
 
-        System.out.println("---------con dinero JUSTO para el precio---------");
+        System.out.println("---------con dinero SUFICIENTE para el precio---------");
         try {
             m = new Moneda1000();
             c = new Comprador(m, PrecioProducto.COCA, exp);
@@ -38,18 +38,23 @@ public class Main {
 
         System.out.println("---------trata de comprar SIN Moneda---------");
         try {
+            m = null;
             c = new Comprador(m, PrecioProducto.COCA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
+            m = null;
             c = new Comprador(m, PrecioProducto.SPRITE, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
+            m = null;
             c = new Comprador(m, PrecioProducto.FANTA, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
+            m = null;
             c = new Comprador(m, PrecioProducto.SNICKERS, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
 
+            m = null;
             c = new Comprador(m, PrecioProducto.SUPER8, exp);
             System.out.println(c.queBebiste() + ", " + c.cuantoVuelto());
         } catch (PagoIncorrectoException exception) {
